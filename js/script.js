@@ -71,6 +71,11 @@ function done () {
             taskArticles[item].style.textDecoration = 'line-through solid grey';
             taskTitles[item].style.color = 'grey';
             taskArticles[item].style.color = 'grey';
+        } else {
+            taskTitles[item].style.textDecoration = 'none';
+            taskArticles[item].style.textDecoration = 'none';
+            taskTitles[item].style.color = '#000';
+            taskArticles[item].style.color = '#000';
         }
     });
 }
