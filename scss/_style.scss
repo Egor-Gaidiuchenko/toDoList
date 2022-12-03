@@ -5,6 +5,7 @@ body {
     display: grid;
     position: relative;
     background-color: rgba(0, 169, 236, .5);
+    justify-items: center;
 
     header {
         width: 100%;
@@ -12,6 +13,7 @@ body {
         background-color: rgba(0, 169, 236, .8);
         display: grid;
         grid-template-columns: 100px 1fr;
+        box-sizing: border-box;
 
         img {
             height: 100px;
@@ -51,21 +53,25 @@ body {
         height: auto;
         row-gap: 15px;
         padding: 15px;
+        width: 1024px;
+        box-sizing: border-box;
 
-        .deal {
+        .task {
             display: grid;
-            grid-template: repeat(2, auto) / 100px 1fr;
-            grid-template-areas: "checkbox title" "checkbox article";
+            grid-template: repeat(2, auto) / 100px 1fr 50px;
+            grid-template-areas: "checkbox title bin" "checkbox article bin";
             width: 100%;
             height: auto;
             max-height: 100px;
             column-gap: 30px;
+            row-gap: 10px;
 
             label {
                 grid-area: checkbox;
                 display: grid;
                 height: 100px;
                 width: 100px;
+                align-self: center;
 
                 input { 
                     height: 50px;
@@ -79,18 +85,35 @@ body {
 
             h1 {
                 grid-area: title;
-                font-size: 24px;
-                margin: 0;
-                width: 100%;
                 height: auto;
                 justify-self: start;
                 text-justify: center;
+                max-width: calc(100vw - 240px);
+                word-wrap: break-word;
+                @include fontRoboto (24px, 700);
             }
 
             p {
                 grid-area: article;
-                font-size: 16px;
-                margin: 0;
+                max-width: calc(100vw - 240px);
+                word-wrap: break-word;
+                @include fontRoboto (16px, 400);
+            }
+
+            .bin {
+                grid-area: bin;
+                width: 100%;
+                height: 100%;
+                display: grid;
+
+                svg {
+                    height: 50px;
+                    width: 50px;
+                    fill: #fff;
+                    justify-self: center;
+                    align-self: center;
+                    z-index: -1;
+                }
             }
         }
     }

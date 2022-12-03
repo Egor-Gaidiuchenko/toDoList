@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@mixin fontRoboto ($fontSize, $fontWeight) {
+    font-family: 'Roboto';
+    font-size: $fontSize;
+    line-height: $fontSize;
+    font-weight: $fontWeight;
+    margin: 0;
+}
